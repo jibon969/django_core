@@ -14,4 +14,4 @@ class StudentAdmin(admin.ModelAdmin):
         model = Student
 
 
-admin.site.register(StudentAdmin, Student)
+admin.site.register(Student, StudentAdmin)
