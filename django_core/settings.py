@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Register API
     'crud.apps.CrudConfig',
     'inventory.apps.InventoryConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
