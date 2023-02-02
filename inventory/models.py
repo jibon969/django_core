@@ -18,3 +18,15 @@ class Brand(models.Model):
 
     def __str__(self):
         return f"Name:{self.name}"
+
+
+class Person(models.Model):
+    class Colours(models.TextChoices):
+        RED = "RD", "Red",
+        BLUE = "BL", "Blue",
+
+    name = models.CharField(max_length=50)
+    color = models.CharField(max_length=50, choices=Colours.choices)
+
+
+
