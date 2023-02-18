@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "blog/base.html" %}
+{% block title %}Share a post{% endblock %}
+{% block content %}
+    {% if sent %}
+        <h1>E-mail successfully sent</h1>
+        <p>"{{ post.title }}" was successfully sent to {{ form.cleaned_data.to }}.</p>
+    {% else %}
+        <h1>Share "{{ post.title }}" by e-mail</h1>
+        <form method="post">
+            {{ form.as_p }}
+            {% for field in form %}
+                <div>
+                    {{ field.errors }}
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+            {% csrf_token %}
+            <input type="submit" value="Send e-mail">
+        </form>
+    {% endif %}
+{% endblock %}
