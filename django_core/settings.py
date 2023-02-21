@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'crud.apps.CrudConfig',
     'inventory.apps.InventoryConfig',
     'blog.apps.BlogConfig',
+    'test_app.apps.TestAppConfig',
 ]
 
 MIDDLEWARE = [
