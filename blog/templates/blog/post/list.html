@@ -11,7 +11,8 @@
         <p class="date">
             Published {{ post.publish }} by {{ post.author }}
         </p>
-        {{ post.body|truncatewords:30|linebreaks }}
+        {#        {{ post.body|truncatewords:30|linebreaks }}#}
+        post.body|markdown|truncatewords_html:30
     {% endfor %}
 
     {% include "pagination.html" with page=posts %}
