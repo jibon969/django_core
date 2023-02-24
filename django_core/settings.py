@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'test_app.apps.TestAppConfig',
     'contact.apps.ContactConfig',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
