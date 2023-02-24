@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'test_app.apps.TestAppConfig',
     'contact.apps.ContactConfig',
     'django.contrib.sitemaps',
+    # PostgreSQL
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
