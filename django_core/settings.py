@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Register API
     'crud.apps.CrudConfig',
+    'account.apps.AccountConfig',
     'inventory.apps.InventoryConfig',
     'blog.apps.BlogConfig',
     'test_app.apps.TestAppConfig',
