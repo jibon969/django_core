@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'inventory.apps.InventoryConfig',
     'blog.apps.BlogConfig',
-    'test_app.apps.TestAppConfig',
     'contact.apps.ContactConfig',
     'django.contrib.sitemaps',
     # PostgreSQL
