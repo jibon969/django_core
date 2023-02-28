@@ -5,6 +5,11 @@ from .forms import LoginForm
 
 
 def user_login(request):
+    """
+    user login view
+    :param request:
+    :return:
+    """
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
