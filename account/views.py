@@ -29,4 +29,9 @@ def user_login(request):
 
 
 def dashboard(request):
+    """
+
+    :param request:
+    :return:
+    """
     return render(request, 'account/dashboard.html')
