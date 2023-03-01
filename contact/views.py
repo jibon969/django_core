@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Contact
 import csv
@@ -6,7 +5,12 @@ import csv
 
 # Create your views here.
 def download_contact_csv(request):
-    queryset = Contact.objects.all().order_by('-timestamp')[:500]
+    """
+
+    :param request:
+    :return: 
+    """
+    queryset = Contact.objects.order_by('-timestamp')[:500]
     response = HttpResponse(content_type="text/csv")
     writer = csv.writer(response)
     writer.writerow([
