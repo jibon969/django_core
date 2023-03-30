@@ -30,21 +30,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'crud.apps.CrudConfig',
+    'account.apps.AccountConfig',
+    'inventory.apps.InventoryConfig',
+    'blog.apps.BlogConfig',
+    'contact.apps.ContactConfig',
+    'query_problem.apps.QueryProblemConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Register API
-    'crud.apps.CrudConfig',
-    'account.apps.AccountConfig',
-    'inventory.apps.InventoryConfig',
-    'blog.apps.BlogConfig',
-    'contact.apps.ContactConfig',
     'django.contrib.sitemaps',
-    # PostgreSQL
-    'django.contrib.postgres',
+    'django.contrib.postgres',       # PostgreSQL
 ]
 
 MIDDLEWARE = [
@@ -80,24 +79,24 @@ WSGI_APPLICATION = 'django_core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 #
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-# Local Setting
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'db_blog',      # Database Name
-        'USER': 'postgres',     # User Name
-        'PASSWORD': 'root',     # Password for Postgresql
-        'HOST': '127.0.0.1',    # Django Server
-        'PORT': '5432',         # default port for Postgresql
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# Local Setting
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'db_blog',      # Database Name
+#         'USER': 'postgres',     # User Name
+#         'PASSWORD': 'root',     # Password for Postgresql
+#         'HOST': '127.0.0.1',    # Django Server
+#         'PORT': '5432',         # default port for Postgresql
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
