@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'crud.apps.CrudConfig',
     'account.apps.AccountConfig',
     'inventory.apps.InventoryConfig',
