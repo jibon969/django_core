@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Notification List {{ block.super }} {% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <h4 class="text-center font-italic mt-2">
+                    <a href="{% url 'notification' %}" class="text-decoration-none">Notification List</a>
+                    <span class="text-black-50 mx-2">||</span>
+                    <a href="{% url 'dashboard' %}" class="text-decoration-none">Back to Dashboard</a>
+                </h4>
+                <hr>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            {% if notifications %}
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="table-responsive" style="height: 420px; overflow-y: auto !important">
+                        <table class="table table-striped table-bordered table-hover text-nowrap">
+                            <thead class="bg-dark text-white">
+                            <tr class="text-center">
+                                <th scope="col" class="sticky-top bg-dark">ID</th>
+                                <th scope="col" class="sticky-top bg-dark">Action</th>
+                                <th scope="col" class="sticky-top bg-dark">User</th>
+                                <th scope="col" class="sticky-top bg-dark">Link</th>
+                                <th scope="col" class="sticky-top bg-dark">Created Time</th>
+                                <th scope="col" class="sticky-top bg-dark">Updated Time</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for notification in notifications %}
+                                <tr class="text-center">
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm"
+                                           href="{% url 'delete-notification' notification.id %}">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </td>
+                                    <td>{{ notification.user.email }}</td>
+                                    <td>
+                                        {% if notification.link %}
+                                            <a href="{{ notification.link }}">{{ notification.message }}</a>
+                                        {% else %}
+                                            <a href="#">{{ notification.message }}</a>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ notification.created_at }}</td>
+                                    <td>{{ notification.updated_at }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            {% else %}
+                <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                    <p class="text-center">No notifications Found</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock content %}
