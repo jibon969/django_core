@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'notifications.apps.NotificationsConfig',
     'crud.apps.CrudConfig',
     'account.apps.AccountConfig',
     'inventory.apps.InventoryConfig',
