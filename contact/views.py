@@ -1,6 +1,33 @@
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from .models import Contact
+from .forms import ContactForm
 import csv
+
+
+def contact(request):
+    """
+    This function based view work for contact page
+    urls : http://127.0.0.1:8000/contact-us/
+    :param request:
+    :return:
+    """
+    queryset = Contact.objects.order_by('-timestamp')[:1]
+    form = ContactForm(request.POST or None)
+    errors = None
+    if form.is_valid():
+        form.save()
+        messages.add_message(request, messages.SUCCESS, "Success! Thank you for your message.")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+    if form.errors:
+        errors = form.errors
+    context = {
+        'form': form,
+        'errors': errors,
+        'queryset': queryset
+    }
+    return render(request, 'contact/contact.html', context)
 
 
 # Create your views here.
@@ -18,7 +45,7 @@ def download_contact_csv(request):
     for q in queryset:
         row = []
         row.extend([
-            q.id, q.subject, q.name, q.email, '0'+q.phone, q.message
+            q.id, q.subject, q.name, q.email, '0' + q.phone, q.message
         ])
         writer.writerow(row[:])
 
