@@ -6,11 +6,10 @@ import csv
 # Create your views here.
 def download_contact_csv(request):
     """
-
     :param request:
     :return: 
     """
-    queryset = Contact.objects.order_by('-timestamp')[:500]
+    queryset = Contact.objects.order_by('-timestamp')
     response = HttpResponse(content_type="text/csv")
     writer = csv.writer(response)
     writer.writerow([
