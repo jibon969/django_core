@@ -13,7 +13,6 @@ def contact(request):
     :param request:
     :return:
     """
-    queryset = Contact.objects.order_by('-timestamp')[:1]
     form = ContactForm(request.POST or None)
     errors = None
     if form.is_valid():
@@ -25,7 +24,6 @@ def contact(request):
     context = {
         'form': form,
         'errors': errors,
-        'queryset': queryset
     }
     return render(request, 'contact/contact.html', context)
 
