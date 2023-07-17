@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Example {% endblock title %}
 
-</body>
-</html>
+{% block content %}
+
+    <section id="contact-form">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        <input type="text" placeholder="Subject *" name="subject" class="form-control mb-2">
+                        <input type="text" placeholder="Name *" name="name" class="form-control mb-2">
+                        <input type="tel" placeholder="Phone *" name="phone" class="form-control mb-2">
+                        <input type="email" placeholder="E-mail *" name="email" class="form-control mb-2">
+                        <input type="email" placeholder="Phone *" name="email" class="form-control mb-2">
+                        <textarea name="message" cols="30" rows="10"></textarea>
+                        <button class="btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
