@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Help  Center {{ block.super }} {% endblock title %}
+
+
+{% block content %}
+
+    <!--------- Help Section ---------------->
+    <div class="jumbotron" style="background: #098ACD; border-radius: 0">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-12 col-xs-12 col-md-9 mx-auto">
+                    <h1 class="text-center text-white"><b>Hi. How can we help?</b></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="help-center mb-5">
+        <div class="container">
+            {% if help_center %}
+                <div class="row">
+                    <div class="col col-12 mb-4">
+                        <p>{{ help_center.description|safe }}</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col col-12 mb-4">
+                        <hr>
+                        <h5 class="text-center">No help center Data Available!</h5>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <br>
+    </section>
+
+{% endblock content %}
