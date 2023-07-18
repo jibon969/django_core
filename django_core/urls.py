@@ -27,6 +27,7 @@ urlpatterns = [
     path('', include('crud.urls')),
     path('', include('home.urls')),
     path('', include('contact.urls')),
+    path('', include('about_us.urls')),
     path('blog/', include('blog.urls', namespace='blog')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
