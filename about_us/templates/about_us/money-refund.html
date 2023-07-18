@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Money refund {{ block.super }} {% endblock title %}
+
+
+{% block content %}
+
+    <section class="money-refund mb-5">
+        <div class="container">
+            <h3 class="text-center font-weight-bold">How to Get a Refund</h3>
+            <hr>
+            {% if money_refund %}
+                <div class="row">
+                    <div class="col col-12 mb-4">
+                        <p>{{ money_refund.description|safe }}</p>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col col-12 mb-4">
+                        <hr>
+                        <h5 class="text-center">No Money Refund Data Available!</h5>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <br>
+    </section>
+
+{% endblock content %}
