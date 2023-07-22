@@ -23,7 +23,6 @@ INSTALLED_APPS = [
     'notifications.apps.NotificationsConfig',
     'crud.apps.CrudConfig',
     'account.apps.AccountConfig',
-    'inventory.apps.InventoryConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'query_problem.apps.QueryProblemConfig',
