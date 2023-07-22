@@ -34,7 +34,7 @@ def download_contact_csv(request):
     :param request:
     :return: 
     """
-    queryset = Contact.objects.order_by('-timestamp')
+    queryset = Contact.objects.all()
     response = HttpResponse(content_type="text/csv")
     writer = csv.writer(response)
     writer.writerow([
