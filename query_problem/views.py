@@ -28,12 +28,3 @@ def check_query_performance(request):
     }
     return HttpResponse(context)
 
-
-# @database_debug
-# def check_query_performance_with_select_related():
-#     albums_qs = Album.objects.select_related('artist').all()
-#     for album in albums_qs:
-#         return (album.name, album.artist.first_name)
-#
-#
-# check_query_performance_with_select_related()
