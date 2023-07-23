@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
-    'query_problem.apps.QueryProblemConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
