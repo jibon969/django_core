@@ -9,7 +9,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'notifications.apps.NotificationsConfig',
-    'crud.apps.CrudConfig',
     'account.apps.AccountConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
