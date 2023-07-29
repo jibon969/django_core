@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment,  Reply
 
 
 @admin.register(Post)
@@ -18,3 +18,16 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'post', 'created', 'active')
     list_filter = ('active', 'created', 'updated')
     search_fields = ('name', 'email', 'body')
+
+
+class ReplyAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_display = ['name', 'body', 'approve']
+    search_fields = ['name']
+    list_editable = ['approve']
+
+    class Meta:
+        model = Reply
+
+
+admin.site.register(Reply, ReplyAdmin)
