@@ -1,23 +1,36 @@
 from django import forms
-from .models import Comment, Reply
+from django.forms import Textarea
+from .models import Blog, Category, Comment, Reply
 
 
-class EmailPostForm(forms.Form):
-    name = forms.CharField(max_length=25)
-    email = forms.EmailField()
-    to = forms.EmailField()
-    comments = forms.CharField(required=False, widget=forms.Textarea)
+class CategoryForm(forms.ModelForm):
+    class Meta:
+        model = Category
+        fields = [
+            'title',
+        ]
+
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Blog
+        fields = [
+            'title',
+            'category',
+            'image',
+            'description',
+        ]
 
 
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('name', 'email', 'body')
+        fields = ['name', 'email', 'body', 'approve']
 
-
-class SearchForm(forms.Form):
-    query = forms.CharField()
-
+        # Override the Customer some fields
+        widgets = {
+            'body': Textarea(attrs={'rows': 3, 'cols': 3}),
+        }
 
 class ReplyForm(forms.ModelForm):
     class Meta:
