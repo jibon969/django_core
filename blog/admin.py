@@ -1,23 +1,37 @@
 from django.contrib import admin
-from .models import Post, Comment,  Reply
+from .models import Category, Blog, Comment, Reply
+from django_summernote.admin import SummernoteModelAdmin
 
 
-@admin.register(Post)
-class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'author', 'publish', 'status')
-    list_filter = ('status', 'created', 'publish', 'author')
-    search_fields = ('title', 'body')
-    prepopulated_fields = {'slug': ('title',)}
-    raw_id_fields = ('author',)
-    date_hierarchy = 'publish'
-    ordering = ('status', 'publish')
+@admin.register(Blog)
+class YourModelAdmin(SummernoteModelAdmin):
+    # Specify the fields you want to use Summernote for
+    summernote_fields = ('description',)
 
 
-@admin.register(Comment)
+class CategoryAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_display = ['title']
+    search_fields = ['title']
+
+    class Meta:
+        model = Category
+
+
+admin.site.register(Category, CategoryAdmin)
+
+
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'post', 'created', 'active')
-    list_filter = ('active', 'created', 'updated')
-    search_fields = ('name', 'email', 'body')
+    list_per_page = 20
+    list_display = ['name', 'email', 'body', 'approve']
+    list_editable = ['approve']
+    search_fields = ['name', 'email']
+
+    class Meta:
+        model = Comment
+
+
+admin.site.register(Comment, CommentAdmin)
 
 
 class ReplyAdmin(admin.ModelAdmin):
