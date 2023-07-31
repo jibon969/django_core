@@ -12,7 +12,8 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
-    'dynamic_slider',
+    'dynamic_slider.apps.DynamicSliderConfig',
+    'downlaod.apps.DownlaodConfig',
     # Custom App
     'django.contrib.admin',
     'django.contrib.auth',
