@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.db.models.signals import pre_save
-from .utils import blog_unique_slug_generator
+# from .utils import blog_unique_slug_generator
 
 class Category(models.Model):
     title = models.CharField(max_length=120)
@@ -62,12 +62,12 @@ class Blog(models.Model):
         return self.title
 
 
-def blog_pre_save_receiver(sender, instance, *args, **kwargs):
-    if not instance.slug:
-        instance.slug = blog_unique_slug_generator(instance)
-
-
-pre_save.connect(blog_pre_save_receiver, sender=Blog)
+# def blog_pre_save_receiver(sender, instance, *args, **kwargs):
+#     if not instance.slug:
+#         instance.slug = blog_unique_slug_generator(instance)
+#
+#
+# pre_save.connect(blog_pre_save_receiver, sender=Blog)
 
 
 class Comment(models.Model):
