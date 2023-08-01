@@ -17,4 +17,5 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
     path('account/', include('account.urls')),
+    path('', include('downlaod.urls')),
 ]
