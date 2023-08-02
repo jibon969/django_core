@@ -2,7 +2,6 @@ from django.http import HttpResponse
 import csv
 from .models import Student
 
-
 # Students name
 NAME = ['Jibon', 'Payel', 'Sakib']
 # QUIZ Subject
@@ -32,3 +31,18 @@ def downlaod_model_field_csv(request):
     return response
 
 
+def csv_database_write(request):
+    # Get all data from student Database Table
+    student = Student.objects.all()
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="csv_database_write.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Name', 'Dept', 'Roll'])
+
+    for s in student:
+        writer.writerow([s.id, s.title, s.dept, s.roll])
+
+    return response
