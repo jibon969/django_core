@@ -7,6 +7,4 @@ class Student(models.Model):
     roll = models.CharField(max_length=120)
 
     def __str__(self):
-        x = str(self.title)
-        print(type(x))
-        return x
+        return self.title
