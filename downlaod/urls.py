@@ -3,6 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    # path('', views.post_list, name='post_list'),
+    path('download-csv/', views.download_csv, name='download-csv'),
+    path('downlaod-model-field-csv/', views.downlaod_model_field_csv, name='downlaod-model-field-csv'),
 
 ]
