@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.db.models.signals import pre_save
 # from .utils import blog_unique_slug_generator
 
+
 class Category(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(null=True, blank=True, max_length=50)
@@ -18,12 +19,12 @@ class Category(models.Model):
         ordering = ['-timestamp']
 
 
-def category_pre_save_receiver(sender, instance, *args, **kwargs):
-    if not instance.slug:
-        instance.slug = blog_unique_slug_generator(instance)
-
-
-pre_save.connect(category_pre_save_receiver, sender=Category)
+# def category_pre_save_receiver(sender, instance, *args, **kwargs):
+#     if not instance.slug:
+#         instance.slug = blog_unique_slug_generator(instance)
+#
+#
+# pre_save.connect(category_pre_save_receiver, sender=Category)
 
 
 class BlogManager(models.Manager):
