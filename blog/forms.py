@@ -32,6 +32,7 @@ class CommentForm(forms.ModelForm):
             'body': Textarea(attrs={'rows': 3, 'cols': 3}),
         }
 
+
 class ReplyForm(forms.ModelForm):
     class Meta:
         model = Reply

@@ -5,7 +5,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'c033077e40698b647e23e50881c4d22f'
 DEBUG = True
 ALLOWED_HOSTS = ['*']
-BASE_URL = "http://127.0.0.1:8000"
+BASE_URL = "*"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

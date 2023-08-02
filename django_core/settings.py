@@ -10,7 +10,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'notifications.apps.NotificationsConfig',
     'account.apps.AccountConfig',
-    'blog.apps.BlogConfig',
+    # 'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'dynamic_slider.apps.DynamicSliderConfig',
     'downlaod.apps.DownlaodConfig',
