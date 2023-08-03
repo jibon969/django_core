@@ -21,7 +21,7 @@ def download_csv(request):
     return response
 
 
-def downlaod_model_field_csv(request):
+def download_model_field_csv(request):
     response = HttpResponse(
         content_type="text/csv",
         headers={"Content-Disposition": 'attachment; filename="student.csv"'},
