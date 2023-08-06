@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Student
 from .forms import StudentForm
 
@@ -30,5 +30,18 @@ def add_student_form(request):
         )
     if form.errors:
         errors = form.errors
+    context = {"form": form, "errors": errors}
+    return render(request, 'django_form/row_form.html', context)
+
+
+def student_create_form(request):
+    form = StudentForm(request.POST or None)
+    errors = None
+    if form.is_valid():
+        form.save()
+        return redirect('dashboard')
+    else:
+        form = StudentForm()
+
     context = {"form": form, "errors": errors}
     return render(request, 'django_form/row_form.html', context)
