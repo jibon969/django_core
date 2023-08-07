@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Student
-from .forms import StudentForm
+from .forms import StudentForm, RestaurantCreateForm
 
 
 # Create your views here.
@@ -47,10 +47,6 @@ def student_create_form(request):
     return render(request, 'django_form/row_form.html', context)
 
 
-from django.shortcuts import render
-from .models import RegistationForm
-
-
 def index(request):
     if request.method == "POST":
         name = request.POST.get('name')
@@ -59,7 +55,7 @@ def index(request):
         address = request.POST.get('address')
         password = request.POST.get('password')
 
-        obj = RegistationForm.objects.create(
+        obj = RestaurantCreateForm.objects.create(
             name=name,
             email=email,
             phone=phone,
@@ -67,4 +63,4 @@ def index(request):
             password=password
 
         )
-    return render(request, 'index.html')
+    return render(request, 'django_form/row_form.html')
