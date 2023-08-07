@@ -45,3 +45,26 @@ def student_create_form(request):
 
     context = {"form": form, "errors": errors}
     return render(request, 'django_form/row_form.html', context)
+
+
+from django.shortcuts import render
+from .models import RegistationForm
+
+
+def index(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        address = request.POST.get('address')
+        password = request.POST.get('password')
+
+        obj = RegistationForm.objects.create(
+            name=name,
+            email=email,
+            phone=phone,
+            address=address,
+            password=password
+
+        )
+    return render(request, 'index.html')

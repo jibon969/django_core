@@ -14,7 +14,10 @@ class Student(models.Model):
 class RestaurantLocation(models.Model):
     name = models.CharField(max_length=120)
     location = models.CharField(max_length=120, null=True, blank=True)
-    category = models.CharField(max_length=120, null=True, blank=True, validators=[validate_category])
+    category = models.CharField(
+        max_length=120, null=True, blank=True,
+        validators=[validate_category]
+    )
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
