@@ -50,17 +50,26 @@ def student_create_form(request):
 def index(request):
     if request.method == "POST":
         name = request.POST.get('name')
-        email = request.POST.get('email')
-        phone = request.POST.get('phone')
-        address = request.POST.get('address')
-        password = request.POST.get('password')
-
-        obj = RestaurantCreateForm.objects.create(
+        location = request.POST.get('location')
+        category = request.POST.get('category')
+        RestaurantCreateForm.objects.create(
             name=name,
-            email=email,
-            phone=phone,
-            address=address,
-            password=password
-
+            location=location,
+            category=category,
         )
     return render(request, 'django_form/row_form.html')
+
+
+def restaurant_create(request):
+    form = RestaurantCreateForm(request.POST or None)
+    errors = None
+    if form.is_valid():
+        RestaurantCreateForm.objects.create(
+            name=form.cleaned_data.get("name"),
+            location=form.cleaned_data.get("location"),
+            category=form.cleaned_data.get("category"),
+        )
+    if form.errors:
+        errors = form.errors
+    context = {"form": form, "errors": errors}
+    return render(request, 'index.html', context)
