@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        {% if errors %}
+            {{ errors }}
+        {% endif %}
+        <form action="#" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-10">
+                    <br>
+                    <label>Name</label>
+                    <br>
+                    <input type="text" name="name" class="form-control" placeholder="Your Name">
+                    <br>
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Enter your email">
+                    <br>
+                    <label>Phone Number</label>
+                    <input type="text" name="phone" class="form-control" placeholder="Phone Number +88">
+                    <br>
+                    <label>Address</label>
+                    <input type="text" name="address" class="form-control" placeholder="Address">
+                    <br>
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" placeholder="Enter password">
+                    <br>
+                    <button class="btn btn-primary">Submit</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>

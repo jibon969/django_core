@@ -72,4 +72,4 @@ def restaurant_create(request):
     if form.errors:
         errors = form.errors
     context = {"form": form, "errors": errors}
-    return render(request, 'index.html', context)
+    return render(request, 'django_form/restaurant-form.html', context)
