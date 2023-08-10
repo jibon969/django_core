@@ -5,6 +5,8 @@ from .models import Slider, SingleSlider
 class SliderAdmin(admin.ModelAdmin):
     list_display = ['title', 'extraLargeDevices', 'value', 'url_field']
     search_fields = ['title']
+    list_per_page = 20
+    list_editable = ['title']
 
     class Meta:
         model: Slider
