@@ -37,7 +37,6 @@ def download_model_field_csv(request):
 def csv_database_write(request):
     # Get all data from student Database Table
     student = Student.objects.all()
-
     # Create the HttpResponse object with the appropriate CSV header.
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="csv_database_write.csv"'
@@ -64,7 +63,6 @@ def generate_csv_rows(queryset):
 def download_large_csv(request):
     # Fetch the data from the Student model
     queryset = Student.objects.all()
-
     # Prepare response and CSV writer
     response = StreamingHttpResponse(
         (smart_str(",").join(row) + "\n" for row in generate_csv_rows(queryset)), content_type='text/csv')
