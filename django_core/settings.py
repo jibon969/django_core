@@ -15,6 +15,7 @@ INSTALLED_APPS = [
     'dynamic_slider.apps.DynamicSliderConfig',
     'downlaod.apps.DownlaodConfig',
     'django_form.apps.DjangoFormConfig',
+    'class_base_view.apps.ClassBaseViewConfig',
     # Custom App
     'django.contrib.admin',
     'django.contrib.auth',
