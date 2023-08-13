@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class RestaurantLocation(models.Model):
+class Restaurant(models.Model):
     name = models.CharField(max_length=120)
     location = models.CharField(max_length=120, null=True, blank=True)
     category = models.CharField(
