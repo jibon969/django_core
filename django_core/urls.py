@@ -14,6 +14,7 @@ urlpatterns = [
     path('', include('dynamic_slider.urls')),
     path('', include('notifications.urls')),
     path('', include('django_form.urls')),
+    path('', include('class_base_view.urls')),
     # path('blog/', include('blog.urls', namespace='blog')),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
     #      name='django.contrib.sitemaps.views.sitemap'),
