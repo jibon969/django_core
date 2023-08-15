@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views import View
+from django.views.generic import TemplateView
 
 
 def about_us(request):
@@ -23,3 +23,7 @@ class AboutUs(View):
 
     def get(self, request):
         return render(request, self.template_name)
+
+
+class AboutUsView(TemplateView):
+    template_name = "about_us/about-us.html"
