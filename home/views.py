@@ -13,3 +13,11 @@ class Home(TemplateView):
         context = super(Home. self).get_context_data(*args, **kwargs)
         context['message'] = 'Hello World!'
         return context
+
+
+class AboutInfoView(TemplateView):
+    template_name = "home/home.html"
+
+    def get_context_data(self):
+      context = {"title": "Simple template view"}
+      return context
