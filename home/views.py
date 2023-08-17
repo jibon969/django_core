@@ -15,7 +15,7 @@ class Home(TemplateView):
         return context
 
 
-class AboutInfoView(TemplateView):
+class PersonalInfoView(TemplateView):
     template_name = "home/home.html"
 
     def get_context_data(self):
