@@ -6,7 +6,7 @@ from .models import Student
 
 
 # Students name
-NAME = ['Jibon', 'Payel', 'Sakib']
+NAME = ['Jibon', 'Tamim', 'Sakib']
 # QUIZ Subject
 SUBJECT = ['Math', 'Programming', 'Database', 'Problem-Solving']
 
