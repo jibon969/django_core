@@ -1,8 +1,10 @@
 from django.db import models
+# from metaInfo.models import MetaInfo
 
 
 class Brand(models.Model):
     title = models.CharField(max_length=50)
+    # meta_info = models.ForeignKey(MetaInfo, on_delete=models.CASCADE)
     slug = models.SlugField(null=True, blank=True)
     image = models.FileField(blank=True, null=True)
     discount = models.IntegerField(null=True, blank=True)
@@ -19,7 +21,7 @@ class Brand(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=500)
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, null=True, blank=True)
+    # brand = models.ForeignKey(Brand, on_delete=models.CASCADE, null=True, blank=True)
     image = models.ImageField(upload_to='products/', null=True, blank=True)
     price = models.DecimalField(decimal_places=2, max_digits=20, default=450)
     old_price = models.DecimalField(default=1000, max_digits=20, decimal_places=2)
