@@ -2,6 +2,7 @@ from django.db import models
 
 # Create your models here.
 
+
 class MetaInfo(models.Model):
     title = models.CharField(max_length=63)
     image = models.FileField(blank=True, null=True,upload_to="Meta_tag_image")
