@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django_form.apps.DjangoFormConfig',
     'about_us.apps.AboutUsConfig',
     'product.apps.ProductConfig',
+    'abstract_model.apps.AbstractModelConfig',
     # 'metaInfo.apps.MetainfoConfig',
     # Custom App
     'django.contrib.admin',
