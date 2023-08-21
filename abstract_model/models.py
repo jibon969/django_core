@@ -3,15 +3,35 @@
 from django.db import models
 
 
-class Car(models.Model):
+# class Car(models.Model):
+#     brand = models.CharField(max_length=100)
+#     doors = models.PositiveIntegerField()
+#
+#
+# class Jet(models.Model):
+#     brand = models.CharField(max_length=100)
+#     wing_type = models.CharField(max_length=30)
+#
+#
+# class Bike(models.Model):
+#     brand = models.CharField(max_length=100)
+
+
+class Common(models.Model):
     brand = models.CharField(max_length=100)
+
+    class Meta:
+        abstract = True
+
+
+class Car(Common):
     doors = models.PositiveIntegerField()
+    brand = models.CharField(max_length=30)
 
 
-class Jet(models.Model):
-    brand = models.CharField(max_length=100)
+class Jet(Common):
     wing_type = models.CharField(max_length=30)
 
 
-class Bike(models.Model):
-    brand = models.CharField(max_length=100)
+class Bike(Common):
+    pass
