@@ -28,10 +28,18 @@ class Car(Common):
     doors = models.PositiveIntegerField()
     brand = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.brand
+
 
 class Jet(Common):
     wing_type = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.brand
+
 
 class Bike(Common):
-    pass
+    
+    def __str__(self):
+        return self.brand
