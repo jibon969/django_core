@@ -1,7 +1,13 @@
 asgiref==3.4.1
+certifi==2023.7.22
+charset-normalizer==2.0.12
 Django==3.2.16
+idna==3.4
 Pillow==8.4.0
 psycopg2==2.9.6
+pyfcm==1.5.4
 pytz==2022.7.1
+requests==2.27.1
 sqlparse==0.4.3
 typing-extensions==4.1.1
+urllib3==1.26.16

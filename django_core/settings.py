@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'notifications.apps.NotificationsConfig',
-    'account.apps.AccountConfig',
+    'push_notification.apps.PushNotificationConfig',
     # 'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'dynamic_slider.apps.DynamicSliderConfig',
@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.postgres',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -100,3 +102,8 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+# settings.py
+FCM_DJANGO_SETTINGS = {
+    "FCM_SERVER_KEY": "your_fcm_server_key",
+}
