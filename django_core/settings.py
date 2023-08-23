@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django_form.apps.DjangoFormConfig',
     'about_us.apps.AboutUsConfig',
     'product.apps.ProductConfig',
+    'asynchronous.apps.AsynchronousConfig',
     'abstract_model.apps.AbstractModelConfig',
     # 'metaInfo.apps.MetainfoConfig',
     # Custom App
@@ -29,7 +30,6 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.postgres',
 ]
-
 
 
 MIDDLEWARE = [
