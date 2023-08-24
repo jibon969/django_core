@@ -12,6 +12,7 @@ INSTALLED_APPS = [
     'push_notification.apps.PushNotificationConfig',
     # 'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
+    'comment.apps.CommentConfig',
     'dynamic_slider.apps.DynamicSliderConfig',
     'downlaod.apps.DownlaodConfig',
     'django_form.apps.DjangoFormConfig',
