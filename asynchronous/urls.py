@@ -1,8 +1,9 @@
-# ayncapi/urls.py
-from django.contrib import admin
-from django.urls import path, include
+
+from django.urls import path
+from .views import sync_view, async_view
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("", include("asynchronous.urls"))
+    path("sync_view/", sync_view),
+    path("async_view/", async_view)
+
 ]
