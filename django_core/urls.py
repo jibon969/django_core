@@ -15,6 +15,7 @@ urlpatterns = [
     path('', include('notifications.urls')),
     path('', include('django_form.urls')),
     path('', include('about_us.urls')),
+    path('', include('asynchronous.urls')),
     # path('blog/', include('blog.urls', namespace='blog')),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
     #      name='django.contrib.sitemaps.views.sitemap'),

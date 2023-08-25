@@ -103,8 +103,3 @@ try:
     from .local_settings import *
 except ImportError:
     pass
-
-# settings.py
-FCM_DJANGO_SETTINGS = {
-    "FCM_SERVER_KEY": "your_fcm_server_key",
-}
