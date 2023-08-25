@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
+
 # from blog.sitemaps import PostSitemap
 
 # sitemaps = {
@@ -15,10 +16,11 @@ urlpatterns = [
     path('', include('notifications.urls')),
     path('', include('django_form.urls')),
     path('', include('about_us.urls')),
+    path('', include('downlaod.urls')),
     path('', include('asynchronous.urls')),
 
     # path('blog/', include('blog.urls', namespace='blog')),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
     #      name='django.contrib.sitemaps.views.sitemap'),
-    path('', include('downlaod.urls')),
+
 ]
