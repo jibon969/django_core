@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'product.apps.ProductConfig',
     'asynchronous.apps.AsynchronousConfig',
     'abstract_model.apps.AbstractModelConfig',
+    'dashboard.apps.DashboardConfig',
     # 'metaInfo.apps.MetainfoConfig',
     # Custom App
     'django.contrib.admin',
