@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %} Example {% endblock title %}
 
-</body>
-</html>
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Hello</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
