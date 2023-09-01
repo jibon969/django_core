@@ -1,13 +1,11 @@
 from django.contrib import admin
-from .models import Student
-
-admin.site.register(Student)
-
-
 import csv
 from io import StringIO
 from django.core.paginator import Paginator
 from django.http import StreamingHttpResponse
+from .models import Student
+
+admin.site.register(Student)
 
 
 def export_as_csv_action(description="Export selected objects as CSV file", header=True):
