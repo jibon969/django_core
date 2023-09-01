@@ -3,7 +3,7 @@ from .models import Slider, SingleSlider
 
 
 class SliderAdmin(admin.ModelAdmin):
-    list_display = ['title', 'extraLargeDevices', 'value', 'url_field']
+    list_display = ['title', 'extra_large_devices', 'value', 'url_field']
     search_fields = ['title']
     list_per_page = 20
 
