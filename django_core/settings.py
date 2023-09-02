@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'notifications.apps.NotificationsConfig',
-    # 'blog.apps.BlogConfig',
+    'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'comment.apps.CommentConfig',
     'dynamic_slider.apps.DynamicSliderConfig',
