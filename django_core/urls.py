@@ -18,6 +18,7 @@ urlpatterns = [
     path('', include('about_us.urls')),
     path('', include('downlaod.urls')),
     path('', include('asynchronous.urls')),
+    path('', include('blog.urls', namespace="blog")),
 
     # path('blog/', include('blog.urls', namespace='blog')),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
