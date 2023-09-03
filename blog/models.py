@@ -3,7 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.db.models.signals import pre_save
-# from .utils import blog_unique_slug_generator
+from blog.utils import blog_unique_slug_generator
 
 
 class Category(models.Model):
@@ -19,19 +19,19 @@ class Category(models.Model):
         ordering = ['-timestamp']
 
 
-# def category_pre_save_receiver(sender, instance, *args, **kwargs):
-#     if not instance.slug:
-#         instance.slug = blog_unique_slug_generator(instance)
-#
-#
-# pre_save.connect(category_pre_save_receiver, sender=Category)
+def category_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = blog_unique_slug_generator(instance)
+
+
+pre_save.connect(category_pre_save_receiver, sender=Category)
 
 
 class BlogManager(models.Manager):
     def get_queryset(self):
         return super(BlogManager, self).get_queryset() \
             .filter(status='published')
-    
+
 
 class Blog(models.Model):
     STATUS_CHOICES = (
@@ -52,10 +52,14 @@ class Blog(models.Model):
     published = BlogManager()  # Our custom manager.
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail',
-                       args=[self.publish.year,
-                             self.publish.month,
-                             self.publish.day, self.slug])
+        return reverse(
+            'blog:post_detail',
+            args=[
+                self.publish.year,
+                self.publish.month,
+                self.publish.day, self.slug
+            ])
+
     class Meta:
         ordering = ('-publish',)
 
