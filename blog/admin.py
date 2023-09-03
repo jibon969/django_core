@@ -1,13 +1,12 @@
 from django.contrib import admin
 from .models import Category, Blog, Comment, Reply
-# from django_summernote.admin import SummernoteModelAdmin
+from django_summernote.admin import SummernoteModelAdmin
 
-#
-# @admin.register(Blog)
-# class YourModelAdmin(SummernoteModelAdmin):
-#     # Specify the fields you want to use Summernote for
-#     summernote_fields = ('description',)
-#
+
+@admin.register(Blog)
+class YourModelAdmin(SummernoteModelAdmin):
+    # Specify the fields you want to use Summernote for
+    summernote_fields = ('description',)
 
 
 class CategoryAdmin(admin.ModelAdmin):
