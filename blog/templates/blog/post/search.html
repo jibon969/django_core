@@ -1,7 +1,9 @@
 {% extends "blog/base.html" %}
 {% load blog_tags %}
 {% block title %}Search{% endblock %}
+
 {% block content %}
+
     {% if query %}
         <h1>Posts containing "{{ query }}"</h1>
         <h3>
@@ -24,4 +26,5 @@
             <input type="submit" value="Search">
         </form>
     {% endif %}
+
 {% endblock %}
