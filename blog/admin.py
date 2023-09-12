@@ -5,7 +5,6 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Blog)
 class YourModelAdmin(SummernoteModelAdmin):
-    # Specify the fields you want to use Summernote for
     summernote_fields = ('description',)
 
 
