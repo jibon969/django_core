@@ -4,7 +4,7 @@ from .models import Comment, Replay
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['name', 'body', 'blog', 'approve', 'created_at', 'updated_at']
+    list_display = ['name', 'body', 'blog', 'approve', 'created_at']
     list_editable = ['approve']
     search_fields = ['name', 'email', 'body']
 
