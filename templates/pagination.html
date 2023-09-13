@@ -1,0 +1,49 @@
+{% if object_list %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item {% if not object_list.has_previous %} disabled {% endif %}">
+                <a class="page-link" href="?page=1" tabindex="-1">FIRST</a>
+            </li>
+            <li class="page-item {% if not object_list.has_previous %} disabled {% endif %}">
+                <a class="page-link"
+                   href="{% if object_list.has_previous %}?page={{ object_list.previous_page_number }}{% endif %}"
+                   tabindex="-1">
+                    Previous
+                </a>
+            </li>
+            {% if object_list.number|add:'-4' > 1 %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="?page={{ object_list.number|add:'-5' }}">&hellip;</a>
+                </li>
+            {% endif %}
+            {% for i in object_list.paginator.page_range %}
+                {% if object_list.number == i %}
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% elif i > object_list.number|add:'-5' and i < object_list.number|add:'5' %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if object_list.paginator.num_pages > object_list.number|add:'4' %}
+                <li class="page-item disabled">
+                    <a class="page-link" href="?page={{ object_list.number|add:'5' }}">&hellip;</a>
+                </li>
+            {% endif %}
+            <li class="page-item {% if not object_list.has_next %} disabled {% endif %}">
+                <a class="page-link"
+                   href="{% if object_list.has_next %} ?page={{ object_list.next_page_number }} {% endif %}">
+                    Next
+                </a>
+            </li>
+            <li class="page-item {% if not object_list.has_next %} disabled {% endif %}">
+                <a class="page-link"
+                   href="{% if object_list.has_next %} ?page={{ object_list.paginator.num_pages }} {% endif %}">
+                    LAST
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endif %}
