@@ -7,6 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Application definition
 
 INSTALLED_APPS = [
+    # Custom app
+    'accounts.apps.AccountsConfig',
     'home.apps.HomeConfig',
     'notifications.apps.NotificationsConfig',
     'blog.apps.BlogConfig',
@@ -21,7 +23,7 @@ INSTALLED_APPS = [
     'abstract_model.apps.AbstractModelConfig',
     'dashboard.apps.DashboardConfig',
     # 'metaInfo.apps.MetainfoConfig',
-    # Custom App
+    # Default App
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
