@@ -1,15 +1,7 @@
 from django.db import models
-from datetime import timedelta
-from django.core.mail import send_mail
-from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser, PermissionsMixin, AbstractUser
 )
-from django.db.models import Q
-from django.template.loader import get_template
-from django.urls import reverse
-from django.utils import timezone
-from django.db.models.signals import pre_save, post_save
 from django.conf import settings
 
 DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
