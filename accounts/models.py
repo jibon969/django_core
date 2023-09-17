@@ -80,7 +80,6 @@ class User(AbstractUser):
     GENDER = [
         ('M', 'Male'),
         ('F', 'Female'),
-        ('O', 'Other')
     ]
     date_of_birth = models.DateField(auto_now_add=False)
     contact_number = models.CharField(max_length=15)
@@ -88,7 +87,7 @@ class User(AbstractUser):
     # notice the absence of a "Password field", that's built in.
     USERNAME_FIELD = 'email'
     # Email & Password are required by default.
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'dob', 'gender', 'contact_number']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'date_of_birth', 'gender', 'contact_number']
 
     objects = UserManager()
 
