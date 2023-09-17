@@ -8,11 +8,13 @@ DEFAULT_ACTIVATION_DAYS = getattr(settings, 'DEFAULT_ACTIVATION_DAYS', 7)
 
 
 class UserManager(BaseUserManager):
-    def create_user(self, email, password=None, first_name=None, last_name=None, date_of_birth=None, gender=None,
-                    contact_number=None):
-        """
-        Creates and saves a User with the given email and password.
-        """
+    def create_user(
+            self, email, password=None,
+            first_name=None,
+            last_name=None,
+            date_of_birth=None,
+            gender=None,
+            contact_number=None):
         if not email:
             raise ValueError('Users must have an email address')
 
@@ -29,10 +31,15 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_staff_user(self, email, password, first_name, last_name, date_of_birth, gender, contact_number):
-        """
-        Creates and saves a staff user with the given email and password.
-        """
+    def create_staff_user(
+            self, email,
+            password,
+            first_name,
+            last_name,
+            date_of_birth,
+            gender,
+            contact_number
+    ):
         user = self.create_user(
             email,
             password=password,
@@ -76,7 +83,7 @@ class User(AbstractUser):
         ('O', 'Other')
     ]
     date_of_birth = models.DateField(auto_now_add=False)
-    contact_number = models.CharField(max_length=15, verbose_name='Contact Number')
+    contact_number = models.CharField(max_length=15)
     gender = models.CharField(max_length=1, choices=GENDER)
     # notice the absence of a "Password field", that's built in.
     USERNAME_FIELD = 'email'
@@ -87,4 +94,3 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
-
