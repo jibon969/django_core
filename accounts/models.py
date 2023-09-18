@@ -76,7 +76,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractUser):
     username = None
-    email = models.EmailField(verbose_name='Email Address', max_length=255, unique=True, )
+    email = models.EmailField(max_length=255, unique=True, )
     GENDER = [
         ('M', 'Male'),
         ('F', 'Female'),
