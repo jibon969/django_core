@@ -12,3 +12,8 @@ class UserCreateForm(forms.ModelForm):
             'gender',
             'email',
         ]
+
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
