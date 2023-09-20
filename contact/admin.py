@@ -21,4 +21,4 @@ class ReplayContactAdmin(admin.ModelAdmin):
         model = ReplayContact
 
 
-admin.site.register(ReplayContactAdmin)
+admin.site.register(ReplayContact, ReplayContactAdmin)
