@@ -10,7 +10,7 @@ class ContactAdmin(admin.ModelAdmin):
         model = Contact
 
 
-admin.site.register(Contact)
+admin.site.register(Contact, ContactAdmin)
 
 
 class ReplayContactAdmin(admin.ModelAdmin):
