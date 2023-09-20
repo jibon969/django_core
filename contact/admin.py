@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Contact
+from .models import Contact, ReplayContact
 
 
 class ContactAdmin(admin.ModelAdmin):
@@ -11,3 +11,14 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact)
+
+
+class ReplayContactAdmin(admin.ModelAdmin):
+    list_per_page = 20
+    list_editable = ('message',)
+
+    class Mata:
+        model = ReplayContact
+
+
+admin.site.register(ReplayContactAdmin)
