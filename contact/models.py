@@ -31,3 +31,4 @@ class ReplayContact(models.Model):
 
     class Meta:
         ordering = ['-timestamp']
+
