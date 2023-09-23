@@ -1,1 +1,1 @@
-https://blog.devgenius.io/implement-asynchronous-api-in-django-76723b912924
+# 1. https://blog.devgenius.io/implement-asynchronous-api-in-django-76723b912924
