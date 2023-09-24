@@ -31,7 +31,6 @@ INSTALLED_APPS = [
     'asynchronous.apps.AsynchronousConfig',
     'abstract_model.apps.AbstractModelConfig',
     'dashboard.apps.DashboardConfig',
-    # 'metaInfo.apps.MetainfoConfig',
 ]
 
 MIDDLEWARE = [
