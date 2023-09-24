@@ -10,7 +10,7 @@ from django.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('home.urls')),
+    path('', include('home.urls')),
     path('', include('contact.urls')),
     path('', include('dynamic_slider.urls')),
     path('', include('notifications.urls')),
