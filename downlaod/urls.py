@@ -9,5 +9,4 @@ urlpatterns = [
     path('download-model-field/', views.download_model_field_csv, name='download-model-field'),
 
     path('download-csv-by-date/', views.download_csv_by_date, name='download-csv-by-date'),
-
 ]
