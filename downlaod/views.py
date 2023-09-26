@@ -50,6 +50,24 @@ def csv_database_write(request):
     return response
 
 
+def download_csv_by_date(request, start_date, end_date):
+    # Filter students based on the date range (e.g., date_of_birth)
+    filtered_students = Student.objects.filter(date_of_birth__gte=start_date, date_of_birth__lte=end_date)
+
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = f'attachment; filename="csv_database_write_{start_date}_to_{end_date}.csv"'
+
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'Name', 'Dept', 'Roll'])
+
+    for s in filtered_students:
+        writer.writerow([s.id, s.name, s.dept, s.roll])
+
+    return response
+
+
+
 def generate_csv_rows(queryset):
     """
     Generator function that yields rows for the CSV file.
