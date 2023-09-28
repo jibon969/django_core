@@ -15,11 +15,11 @@ class AboutUs(View):
     Class based view
     """
     # def get(self, request):
-    #     return render(request, "about_us/about-us.html")
+    #     return render(request, "about_us/abouts.html")
 
     # or
 
-    template_name = "about_us/about-us.html"
+    template_name = "about_us/abouts.html"
 
     def get(self, request):
         return render(request, self.template_name)
