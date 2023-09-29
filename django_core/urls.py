@@ -15,7 +15,6 @@ urlpatterns = [
     path('', include('dynamic_slider.urls')),
     path('', include('notifications.urls')),
     path('', include('django_form.urls')),
-    path('', include('about_us.urls')),
     path('', include('abouts.urls')),
     path('', include('downlaod.urls')),
     path('', include('asynchronous.urls')),
