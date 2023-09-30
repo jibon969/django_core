@@ -26,12 +26,12 @@ INSTALLED_APPS = [
     'dynamic_slider.apps.DynamicSliderConfig',
     'downlaod.apps.DownlaodConfig',
     'django_form.apps.DjangoFormConfig',
-    'abouts.apps.AboutsConfig',
     'product.apps.ProductConfig',
     'asynchronous.apps.AsynchronousConfig',
     'abstract_model.apps.AbstractModelConfig',
     'dashboard.apps.DashboardConfig',
     'abouts.apps.AboutsConfig',
+
 
 ]
 
