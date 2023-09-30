@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'abstract_model.apps.AbstractModelConfig',
     'dashboard.apps.DashboardConfig',
     'abouts.apps.AboutsConfig',
-
+    'class_base_view.apps.ClassBaseViewConfig',
 
 ]
 
