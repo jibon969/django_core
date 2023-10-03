@@ -7,6 +7,9 @@ from django.utils import timezone
 from django.views.generic.list import ListView
 
 
+def about_us(request):
+    return HttpResponse("Hello, World!")
+
 class AboutView(TemplateView):
     template_name = "templates/abouts/abouts.html"
 
