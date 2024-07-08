@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Blog
 from django.views.generic import ListView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .forms import EmailPostForm
@@ -10,7 +10,7 @@ from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 
 def post_list(request):
-    object_list = Post.published.all()
+    object_list = Blog.published.all()
     paginator = Paginator(object_list, 3)  # 3 posts in each page
     page = request.GET.get('page')
     try:
@@ -25,7 +25,7 @@ def post_list(request):
 
 
 class PostListView(ListView):
-    queryset = Post.published.all()
+    queryset = Blog.published.all()
     context_object_name = 'posts'
     paginate_by = 3
     template_name = 'blog/post/list.html'
